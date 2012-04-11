@@ -1,0 +1,26 @@
+# Create a VIM Workstation Anywhere
+# =================================
+
+# Preliminary Git stuff if not done already
+git config --global user.name "Robert Haddon"
+git config --global user.email rbhaddon@gmail.com
+git config --global push.default "matching"
+git config --global color.status auto
+git config --global color.branch auto
+ 
+# Now onto vim stuff
+# ------------------
+
+# Link .vimrc and .gvimrc to ~/
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
+
+# The README from wnodom:
+# Welcome to Bill Odom's Vim environment. Here's how to use it:
+#
+# - Copy (or clone) this directory to ~/.vim (or the equivalent for your OS).
+#
+# - Create the following symbolic links:
+#
+#     ln -s ~/.vim/.vimrc  ~/.vimrc
+#     ln -s ~/.vim/.gvimrc ~/.gvimrc
