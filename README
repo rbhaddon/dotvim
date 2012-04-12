@@ -2,8 +2,8 @@
 # =================================
 
 # Preliminary Git stuff if not done already
-git config --global user.name "Robert Haddon"
-git config --global user.email rbhaddon@gmail.com
+git config --global user.name "Firt Last"
+git config --global user.email email@address.com
 git config --global push.default "matching"
 git config --global color.status auto
 git config --global color.branch auto
