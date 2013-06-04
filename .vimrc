@@ -172,7 +172,8 @@ endif
 
 " Use pathogen for better plugin management.
 "
-call pathogen#runtime_append_all_bundles() 
+"call pathogen#runtime_append_all_bundles() 
+call pathogen#incubate() 
 
 
 """
@@ -534,7 +535,11 @@ nnoremap ,.  :NERDTreeToggle<CR>
 
 " Toggle the Taglist window
 "
-nnoremap \l  :TlistToggle<CR>
+nnoremap \tl  :TlistToggle<CR>
+
+" Toggle the Tagbar window
+"
+nnoremap \tt  :TagbarToggle<CR>
 
 " Delete to end of line, bash-style.
 "
@@ -624,6 +629,36 @@ endif
 
 let Tlist_Use_Right_Window = 1
 
+
+" Tagbar Configuration for Golang
+"
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 
 
 """

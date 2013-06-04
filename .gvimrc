@@ -66,6 +66,12 @@ if has("gui_mac")
 
 endif
 
+" Linux gvim-gnome settings
+"
+if has("gui_gnome")
+    set antialias linespace=2 guifont=Monospace\ 12
+endif
+
 " MacVim (Cocoa) settings
 "
 if has("gui_macvim")
@@ -104,7 +110,8 @@ endif
 
 " Load my custom colorscheme.
 "
-colorscheme wnodom
+"colorscheme wnodom
+colorscheme desert
 
 " Turn on the experimental highlight-color-changer for Visual/Select modes.
 " (This probably won't stay here, since it's not just for GUI Vim, but
