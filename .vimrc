@@ -557,6 +557,10 @@ nnoremap \<Tab> <Esc>:Tabularize /
 "
 nnoremap <silent> ,/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
+" Enable manpage viewing
+"
+runtime ftplugin/man.vim
+
 """
 """ Commands
 """
