@@ -27,6 +27,12 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 
 # Updating submodules
 # -------------------
-# All or most of my pathogen bundles are git submodules.  To update them all:
+# All or most of my pathogen bundles are git submodules.
+# To add a new submodule:
+git submodule add <repo> <path>
+# To update them all:
+git submodule sync
+# -or-
 git submodule init
 git submodule update
+# which is better?
