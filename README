@@ -25,8 +25,23 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 #     ln -s ~/.vim/.vimrc  ~/.vimrc
 #     ln -s ~/.vim/.gvimrc ~/.gvimrc
 
-# Updating submodules
-# -------------------
+
+# New information on submodules
+# -----------------------------
+# I switched from Pathogen to Vundle for vim plugin management.
+# Vundle does the submodule management stuff for me, so I've removed all
+# bundle submodules that I was directly managing except for bundle/Vundle.vim.
+# Updated .gitignore to only care about bundle/Vundle.vim and ignore all other bundles.
+# To refresh plugins within vim:
+# :PluginInstall
+# To refresh plugins from command line:
+# vim +PluginInstall +qall
+# See Vundle section of .vimrc for more.
+
+# To update Vundle itself, perhaps follow the old submodule stuff below.
+
+# Old information on updating submodules
+# --------------------------------------
 # All or most of my pathogen bundles are git submodules.
 # To add a new submodule:
 git submodule add <repo> <path>
