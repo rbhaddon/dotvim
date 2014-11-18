@@ -5,3 +5,6 @@
 .netrwhist
 tags
 
+# Ignore all in ~/.vim/bundle except for Vundle
+bundle/*
+!bundle/Vundle.vim
