@@ -28,26 +28,22 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 
 # New information on submodules
 # -----------------------------
-# I switched from Pathogen to Vundle for vim plugin management.
-# Vundle does the submodule management stuff for me, so I've removed all
-# bundle submodules that I was directly managing except for bundle/Vundle.vim.
-# Updated .gitignore to only care about bundle/Vundle.vim and ignore all other bundles.
-# To refresh plugins within vim:
-# :PluginInstall
-# To refresh plugins from command line:
-# vim +PluginInstall +qall
-# See Vundle section of .vimrc for more.
+# My .vim now uses Vundle, which combines Pathogen with an inside-vim management
+# interface.
+#
+# Vundle help:
+:h vundle
 
-# To update Vundle itself, perhaps follow the old submodule stuff below.
+# Quick hits:
+# Update plugins:
+:PluginUpdate
+# List my plugins:
+:PluginList
 
-# Old information on updating submodules
-# --------------------------------------
-# All or most of my pathogen bundles are git submodules.
-# To add a new submodule:
-git submodule add <repo> <path>
-# To update them all:
-git submodule sync
-# -or-
-git submodule init
-git submodule update
-# which is better?
+# YouCompleteMe
+# -------------
+# After updating YCM with vundle, its libraries will need to be recompiled.  Do
+# that by repeating the installation steps:
+# Linux:
+cd ~/.vim/bundle/YouCompleteMe
+./install.h --clang-completer # C-family semantic support, omit option to drop C support
