@@ -99,11 +99,19 @@ if has("win32")
     set grepprg=internal        " Windows findstr.exe just isn't good enough.
 endif
 
+
+" ColorColumn settings for Insert mode
+augroup ColorcolumnOnlyInInsertMode
+    autocmd!
+    autocmd InsertEnter * setlocal colorcolumn=80,90,100
+    autocmd InsertLeave * setlocal colorcolumn=
+augroup END
+
 " Enable mouse support if it's available.
 "
-if has('mouse')
-    set mouse=a
-endif
+"if has('mouse')
+"    set mouse=a
+"endif
 
 """
 """ Vundle configuration section
@@ -665,6 +673,14 @@ runtime redir_messages.vim
 runtime search_with_skip.vim
 
 
+" Use sudo to write to a file we don't currently have permissions on,
+" plus a few convenience commands for writing and quiting
+"
+command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
+command Wq :execute ':W' | :q
+command WQ :Wq
+
+
 """
 """ Abbreviations
 """
@@ -776,5 +792,6 @@ function! ConfigureWindow()
 
 endfunction
 
+highlight colorcolumn ctermbg=LightCyan
 
 " end .vimrc
