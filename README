@@ -8,31 +8,25 @@ git config --global push.default "matching"
 git config --global color.status auto
 git config --global color.branch auto
  
+
 # Now onto vim stuff
 # ------------------
 
 # Link .vimrc and .gvimrc to ~/
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
-
-# The README from wnodom:
-# Welcome to Bill Odom's Vim environment. Here's how to use it:
-#
-# - Copy (or clone) this directory to ~/.vim (or the equivalent for your OS).
-#
-# - Create the following symbolic links:
-#
-#     ln -s ~/.vim/.vimrc  ~/.vimrc
-#     ln -s ~/.vim/.gvimrc ~/.gvimrc
+ln -s ~/.vim/.vimrc ~/.vimrc
+ln -s ~/.vim/.gvimrc ~/.gvimrc
 
 
 # New information on submodules
 # -----------------------------
 # My .vim now uses Vundle, which combines Pathogen with an inside-vim management
 # interface.
-#
+# Install vundle (it should already be configured in .vimrc)
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # Vundle help:
 :h vundle
+
 
 # Quick hits:
 # Update plugins:
@@ -40,10 +34,12 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 # List my plugins:
 :PluginList
 
+
 # YouCompleteMe
 # -------------
 # After updating YCM with vundle, its libraries will need to be recompiled.  Do
 # that by repeating the installation steps:
 # Linux:
+sudo apt-get install cmake python-dev
 cd ~/.vim/bundle/YouCompleteMe
 ./install.h --clang-completer # C-family semantic support, omit option to drop C support
