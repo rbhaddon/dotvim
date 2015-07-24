@@ -615,6 +615,10 @@ xnoremap \?  "vy?<C-R><C-R>=StringToPattern(@v)<CR>
 xmap *  \/<CR>
 xmap #  \?<CR>
 
+" Trigger Syntastic check
+"
+nnoremap \ss :SyntasticCheck<CR>
+
 " Toggle the NERD Tree window
 "
 nnoremap ,.  :NERDTreeToggle<CR>
@@ -758,6 +762,13 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 
+" Syntastic settings
+"
+let g:syntastic_mode_map = {
+    \ 'mode': 'passive',
+    \ 'active_filetypes': ['ruby', 'php'],
+    \ 'passive_filetypes': ['puppet']
+    \ }
 
 """
 """ Local Functions
