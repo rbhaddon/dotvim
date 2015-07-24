@@ -31,6 +31,12 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 # My .vim now uses Vundle, which combines Pathogen with an inside-vim management
 # interface.
 #
+# Vundle install on new systems:
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#
+# Have vundle install/update your bundles:
+vim +PluginInstall +qall
+#
 # Vundle help:
 :h vundle
 
@@ -46,4 +52,8 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 # that by repeating the installation steps:
 # Linux:
 cd ~/.vim/bundle/YouCompleteMe
-./install.h --clang-completer # C-family semantic support, omit option to drop C support
+./install.sh --clang-completer # C-family semantic support, omit option to drop C support
+
+# OSX
+brew install cmake
+# then run the installer as with linux

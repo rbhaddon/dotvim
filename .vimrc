@@ -139,11 +139,17 @@ Plugin 'https://github.com/rking/ag.vim'
 " plugin buffer explorer
 Plugin 'https://github.com/vim-scripts/bufexplorer.zip'
 
+" plugin syntax range - syntax highlighting different than file type
+Plugin 'vim-scripts/SyntaxRange'
+
 " plugin comment block thingy -- not used much
 "Plugin 'https://github.com/scrooloose/nerdcommenter'
 
 " plugin file/directory browser
 Plugin 'https://github.com/scrooloose/nerdtree'
+
+" plugin markdown syntax checker
+Plugin 'tpope/vim-markdown'
 
 " plugin syntax checker
 Plugin 'https://github.com/scrooloose/syntastic'
@@ -158,7 +164,7 @@ Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 
 " plugin parens, braces, tags helper
-Plugin 'https://github.com/tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " plugin color scheme
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
