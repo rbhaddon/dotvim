@@ -99,11 +99,19 @@ if has("win32")
     set grepprg=internal        " Windows findstr.exe just isn't good enough.
 endif
 
+
+" ColorColumn settings for Insert mode
+augroup ColorcolumnOnlyInInsertMode
+    autocmd!
+    autocmd InsertEnter * setlocal colorcolumn=80,90,100
+    autocmd InsertLeave * setlocal colorcolumn=
+augroup END
+
 " Enable mouse support if it's available.
 "
-if has('mouse')
-    set mouse=a
-endif
+"if has('mouse')
+"    set mouse=a
+"endif
 
 """
 """ Vundle configuration section
@@ -613,6 +621,10 @@ xnoremap \?  "vy?<C-R><C-R>=StringToPattern(@v)<CR>
 xmap *  \/<CR>
 xmap #  \?<CR>
 
+" Trigger Syntastic check
+"
+nnoremap \ss :SyntasticCheck<CR>
+
 " Toggle the NERD Tree window
 "
 nnoremap ,.  :NERDTreeToggle<CR>
@@ -669,6 +681,14 @@ runtime redir_messages.vim
 " and :SearchOutside.
 "
 runtime search_with_skip.vim
+
+
+" Use sudo to write to a file we don't currently have permissions on,
+" plus a few convenience commands for writing and quiting
+"
+command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
+command Wq :execute ':W' | :q
+command WQ :Wq
 
 
 """
@@ -748,6 +768,13 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 
+" Syntastic settings
+"
+let g:syntastic_mode_map = {
+    \ 'mode': 'passive',
+    \ 'active_filetypes': ['ruby', 'php'],
+    \ 'passive_filetypes': ['puppet']
+    \ }
 
 """
 """ Local Functions
@@ -782,5 +809,6 @@ function! ConfigureWindow()
 
 endfunction
 
+highlight colorcolumn ctermbg=LightCyan
 
 " end .vimrc
