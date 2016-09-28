@@ -28,6 +28,7 @@ set showcmd             " Display incomplete commands.
 set incsearch           " Do incremental searching.
 set hlsearch            " Highlight latest search pattern.
 set number              " Display line numbers.
+set relativenumber      " Relative display of lines numbers except current.
 set numberwidth=4       " Minimum number of columns to show for line numbers.
 set laststatus=2        " Always show a status line.
 set visualbell t_vb=    " Use null visual bell (no beeps or flashes).
@@ -142,31 +143,31 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 " plugin 'the silver searcher'
-Plugin 'https://github.com/rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " plugin buffer explorer
-Plugin 'https://github.com/vim-scripts/bufexplorer.zip'
+Plugin 'vim-scripts/bufexplorer.zip'
 
 " plugin syntax range - syntax highlighting different than file type
 Plugin 'vim-scripts/SyntaxRange'
 
 " plugin comment block thingy -- not used much
-"Plugin 'https://github.com/scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
 
 " plugin file/directory browser
-Plugin 'https://github.com/scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " plugin markdown syntax checker
 Plugin 'tpope/vim-markdown'
 
 " plugin syntax checker
-Plugin 'https://github.com/scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " plugin syntax completion
-Plugin 'https://github.com/Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " plugin code browser
-Plugin 'https://github.com/majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 " plugin git
 Plugin 'tpope/vim-fugitive'
@@ -175,7 +176,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
 " plugin color scheme
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'altercation/vim-colors-solarized.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

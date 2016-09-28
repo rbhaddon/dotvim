@@ -44,7 +44,7 @@ vim +PluginInstall +qall
 # Linux:
 sudo apt-get install cmake python-dev
 cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer # C-family semantic support, omit option to drop C support
+python install.py # --all for all completers, see --help for the list
 
 # OSX
 brew install cmake
